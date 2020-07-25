@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-col>
+      <p>[DoubleCounter.vue]</p>
       <v-btn @click="increment">increment {{ step }}</v-btn>
     </v-col>
     <v-col>
@@ -12,14 +13,13 @@
 <script>
 export default {
   name: "DoubleCounter",
-  watch: {},
+  props: {
+    module: {
+      type: String,
+      required: true,
+    },
+  },
   computed: {
-    // step() {
-    //   return this.$store.getters["counter/step"];
-    // },
-    // count() {
-    //   return this.$store.getters["counter/count"];
-    // },
     step() {
       return this.$store.getters["doubleCounter/step"];
     },
@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     increment() {
-      // this.$store.dispatch("counter/increment");
       this.$store.dispatch("doubleCounter/increment");
     },
   },
