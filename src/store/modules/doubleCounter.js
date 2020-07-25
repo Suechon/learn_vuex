@@ -10,12 +10,14 @@ const getters = {
 
 const actions = {
     increment({ commit }) {
-        commit('increment')
+        console.log("あくしょん")
+        commit('mutation_increment')
     }
 }
 
 const mutations = {
-    increment(state) {
+    mutation_increment(state) {
+        console.log("みゅーてーしょん")
         state.count += state.step
     }
 }
