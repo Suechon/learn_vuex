@@ -6,12 +6,14 @@ import totalCounter from './store/modules/totalCounter'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
     //厳格モード
     strict: process.env.NODE_ENV !== 'production',
     modules: {
-        counter,
-        doubleCounter,
+        counterA: counter,
+        counterB: counter,
+        doubleCounterA: doubleCounter,
+        doubleCounterB: doubleCounter,
         totalCounter
     },
     state: {
@@ -23,3 +25,5 @@ export default new Vuex.Store({
 
     }
 })
+store.dispatch('totalCounter/setModules', ['counterA', 'counterB', 'doubleCounterA', 'doubleCounterB'])
+export default store

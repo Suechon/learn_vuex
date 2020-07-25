@@ -21,15 +21,15 @@ export default {
   },
   computed: {
     step() {
-      return this.$store.getters["counter/step"];
+      return this.$store.getters[`${this.module}/step`];
     },
     count() {
-      return this.$store.getters["counter/count"];
+      return this.$store.getters[`${this.module}/count`];
     },
   },
   methods: {
     increment() {
-      this.$store.dispatch("counter/increment");
+      this.$store.dispatch(`${this.module}/increment`);
     },
   },
 };

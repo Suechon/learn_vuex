@@ -1,11 +1,32 @@
+const state = () => ({ modules: [] })
+
 const getters = {
     count(state, getters, rootState) {
-        return rootState.counter.count + rootState.doubleCounter.count
+        let sum = 0
+        state.modules.forEach((elem) => {
+            sum += rootState[elem].count
+        })
+        return sum
+    }
+}
+
+const actions = {
+    setModules({ commit }, val) {
+        commit('setModules', val)
+    }
+}
+
+const mutations = {
+    setModules(state, val) {
+        state.modules = val
     }
 }
 
 export default {
     namespaced: true,
-    getters
+    getters,
+    state,
+    actions,
+    mutations
 }
 

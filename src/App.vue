@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <v-col>
-      <Counter />
-      <DoubleCounter />
+      <Counter module="counterA" />
+      <Counter module="counterB" />
+      <DoubleCounter module="doubleCounterA" />
+      <DoubleCounter module="doubleCounterB" />
       <TotalCounter />
     </v-col>
     <hr />

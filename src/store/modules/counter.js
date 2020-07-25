@@ -1,7 +1,4 @@
-const state = {
-    step: 1,
-    count: 0
-}
+const state = () => ({ step: 1, count: 0 })
 
 const getters = {
     step: state => state.step,
